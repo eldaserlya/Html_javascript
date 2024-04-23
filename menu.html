@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menu Seafood</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #menu {
+      text-align: center;
+    }
+    #menu h1, #menu h2 {
+      margin: 0;
+    }
+    #menu ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap; 
+      justify-content: center; 
+    }
+    #menu ul li {
+      width: 200px;
+      margin: 10px; 
+      text-align: center;
+      vertical-align: top;
+    }
+    #menu ul li img {
+      width: 100%; 
+      height: 200px; 
+      object-fit: cover; 
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body bgcolor="LightYellow">
+  <div id="menu" style="text-align: center;">
+    <h1>Restoran Lautan Rasa</h1>
+    <h2>Menu Seafood</h2>
+    <div style="display: inline-block; text-align: left;">
+      <ul>
+        <li data-description="Gulai lezat dengan kepala ikan segar dan rempah-rempah pilihan"><p><b>Gulai Kepala Ikan</b></p>
+          <img src="gambar/gulaiikan.jpg" alt="Gulai Kepala Ikan" />
+          <p>Harga: Rp 50.000</p>
+        </li>
+        <li data-description=" Cumi-cumi panggang dengan saus padang pedas yang lezat"><p><b>Cumi Saus Padang</b></p>
+          <img src="gambar/cumisauspdg.jpg" alt="Cumi-cumi Saus Padang" />
+          <p>Harga: Rp 60.000</p>
+        </li>
+        <li data-description=" Potongan ikan segar yang dibakar dengan bumbu khas, pedas manis"><p><b>Ikan Bakar</b></p>
+          <img src="gambar/ikanbakar.jpg" alt="Ikan Bakar" />
+          <p>Harga: Rp 40.000</p>
+        </li>
+        <li data-description="Udang segar yang dilapisi tepung crispy, renyah di luar, juicy di dalam"><p><b>Udang Goreng Tepung</b></p>
+          <img src="gambar/udanggorengtpg.jpg" alt="Udang Goreng Tepung" />
+          <p>Harga: Rp 55.000</p>
+        </li>
+      </ul>
+    </div>
+    <div style="display: inline-block; text-align: left;">
+      <ul>
+        <li data-description=" Sate dari daging ikan segar yang dibumbui dan dibakar dengan sempurna"><p><b>Sate Ikan</b></p>
+          <img src="gambar/sateikan.jpg" alt="Sate Ikan" />
+          <p>Harga: Rp 45.000</p>
+        </li>
+        <li data-description=" Sup kental dengan potongan ikan segar dan sayuran"><p><b>Sup Ikan</b></p>
+          <img src="gambar/soupikan.jpg" alt="Sup Ikan" />
+          <p>Harga: Rp 35.000</p>
+        </li>
+        <li data-description="Potongan ikan yang dimasak dengan bumbu pesmol khas, lezat dan beraroma"><p><b>Pesmol Ikan</b></p>
+          <img src="gambar/pesmolikan.jpg" alt="Pesmol Ikan" />
+          <p>Harga: Rp 50.000</p>
+        </li>
+        <li data-description="Udang yang dimasak dengan bumbu rendang khas Padang, pedas dan gurih"><p><b>Rendang Udang</b></p>
+          <img src="gambar/rendangudang.jpg" alt="Rendang Udang" />
+          <p>Harga: Rp 65.000</p>
+        </li>
+      </ul>
+    </div>
+    <div style="display: inline-block; text-align: left;">
+      <ul>
+        <li data-description="Nasi goreng lezat dengan potongan ikan segar dan bumbu khas"><p><b>Nasi Goreng Ikan</b></p>
+          <img src="gambar/nasgorikan.jpg" alt="Nasi Goreng Ikan" />
+          <p>Harga: Rp 30.000</p>
+        </li>
+        <li data-description="Nasi Uduk-pilihan nasi"><p><b>Nasi Uduk</b></p>
+          <img src="gambar/nasiuduk.jpg" alt="Nasi Uduk" />
+          <p>Harga: Rp 10.000</p>
+        </li>
+        <li data-description="Nasi Putih-pilihan nasi"><p><b>Nasi Putih</b></p>
+          <img src="gambar/nasiputih.jpg" alt="Nasi Putih" />
+          <p>Harga: Rp 5.000</p>
+        </li>
+        <li data-description="Minuman segar dengan campuran buah-buahan alami dan es serut"><p><b>Es Teler</b></p>
+          <img src="gambar/esteler.jpg" alt="Es Teler" />
+          <p>Harga: Rp 15.000</p>
+        </li>
+      </ul>
+    </div>
+    <div style="display: inline-block; text-align: left;">
+      <ul>
+        <li data-description="Minuman sirup melon dengan serutan timun dan lemon segar"><p><b>Es Kuwut</b></p>
+          <img src="gambar/eskuwut.jpg" alt="Es Kuwut" />
+          <p>Harga: Rp 10.000</p>
+        </li>
+        <li data-description="Minuman segar dengan air kelapa muda dan potongan daging kelapa"><p><b>Es Degan</b></p>
+          <img src="gambar/esdegan.jpg" alt="Es Degan" />
+          <p>Harga: Rp 10.000</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <button id="show-menu">Tampilkan Menu</button>
+
+  <script>
+    $(document).ready(function() {
+      $("#menu").hide();
+
+      $("#show-menu").click(function() {
+        $("#menu").slideToggle(400); // Efek slide dengan durasi 400ms
+      });
+
+      $("#menu li").hover(function() {
+        $(this).css("color", "blue"); 
+      }, function() {
+        $(this).css("color", "black");
+      });
+
+      $("#menu li").click(function() {
+        var description = $(this).data("description");
+        alert(description);
+      });
+    });
+  </script>
+</body>
+</html>
