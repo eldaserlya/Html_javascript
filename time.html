@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Waktu Real-Time</title>
+</head>
+<body bgcolor="lavender">
+  <form id="clockForm" style="font-family: Arial, sans-serif;">
+    <label for="date" style="color: black; font-size: 18px;">Tanggal :</label>
+    <input type="text" id="date" name="date" readonly style="font-size: 16px;"><br><br>
+    <label for="time" style="color: black; font-size: 18px;">Waktu :</label>
+    <input type="text" id="time" name="time" readonly style="font-size: 16px;">
+    <img src="gambar/iconjam.jpg" alt="Clock" style="width: 20px; height: 20px; vertical-align: middle;">
+  </form>
+
+  <script>
+    function updateClock() {
+      var now = new Date();
+      var dateOptions = { year: 'numeric', month: '2-digit', day: '2-digit' };
+      var timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false, timeZone: 'Asia/Jakarta' };
+      var date = now.toLocaleDateString('id-ID', dateOptions);
+      var time = now.toLocaleTimeString('id-ID', timeOptions);
+      document.getElementById('date').value = date;
+      document.getElementById('time').value = time;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+</html>
