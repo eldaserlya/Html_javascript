@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Download Dialog</title>
+</head>
+<body bgcolor="PapayaWhip">
+    <button onclick="startDownload()">Mulai Download</button>
+<script>
+function startDownload() {
+    var dialog = document.createElement('div');
+    dialog.style.position = 'fixed';
+    dialog.style.top = '50%';
+    dialog.style.left = '50%';
+    dialog.style.transform = 'translate(-50%, -50%)';
+    dialog.style.backgroundColor = '#fff'; 
+    dialog.style.padding = '20px';
+    dialog.style.borderRadius = '10px';
+    dialog.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.3)';
+    document.body.appendChild(dialog);
+
+    var title = document.createElement('h2');
+    title.textContent = 'Downloading File';
+    title.style.marginBottom = '10px';
+    title.style.textAlign = 'center';
+    dialog.appendChild(title);
+
+    var downloadedImage = document.createElement('img');
+    downloadedImage.src = 'https://i.pinimg.com/564x/89/3f/d8/893fd8c300f3323c88c3da381cd63c2d.jpg';
+    downloadedImage.style.display = 'block';
+    downloadedImage.style.margin = '0 auto';
+    downloadedImage.style.maxWidth = '100%'; 
+    downloadedImage.style.maxHeight = '250px'; 
+    dialog.appendChild(downloadedImage);
+
+    var progressBarContainer = document.createElement('div');
+    progressBarContainer.style.width = '200px';
+    progressBarContainer.style.height = '20px';
+    progressBarContainer.style.backgroundColor = '#ccc';
+    progressBarContainer.style.borderRadius = '10px';
+    progressBarContainer.style.margin = '20px auto';
+    dialog.appendChild(progressBarContainer);
+
+    var progressBar = document.createElement('div');
+    progressBar.style.height = '100%';
+    progressBar.style.background = 'linear-gradient(to right, #4CAF50, #FFEB3B)';
+    progressBar.style.borderRadius = '10px';
+    progressBar.style.transition = 'width 0.3s ease';
+    progressBar.style.width = '0%';
+    progressBarContainer.appendChild(progressBar);
+
+    var progressText = document.createElement('div');
+    progressText.textContent = '0%';
+    progressText.style.textAlign = 'center';
+    dialog.appendChild(progressText);
+
+    var progress = 0;
+    var interval = setInterval(function() {
+        if (progress < 100) {
+            progress += 5;
+            progressBar.style.width = progress + '%';
+            progressText.textContent = progress + '%';
+        } else {
+            clearInterval(interval);
+            dialog.remove();
+            alert('Download selesai!');
+        }
+    }, 500);
+}
+</script>
+
+</body>
+</html>
