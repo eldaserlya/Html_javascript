@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basic Dialog</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body bgcolor="PaleTurquoise">
+<div id="dialog" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #f0fdfb; padding: 20px; border: 2px solid #333; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 5px; max-width: 400px;">
+    <h2 style="margin-top: 0; text-align: center;">Selamat Datang di Website Elda</h2>
+    <p style="text-align: justify; text-justify: inter-word;">Di sini Anda akan menemukan informasi menarik, inspirasi, dan masih banyak lagi hal unik. Jangan ragu untuk menjelajahi situs website saya dan temukan dunia yang menakjubkan.</p>
+    <center>
+        <button id="closeBtn" style="background-color: #280b6d; color: #fff; padding: 8px 12px; border: none; border-radius: 3px; cursor: pointer;">Tutup</button>
+    </center>
+</div>
+    <center>
+        <button id="openBtn" style="background-color: #910c6b; color: #fff; padding: 8px 12px; border: none; border-radius: 3px; cursor: pointer; display: block; margin: 0 auto;">Buka Dialog</button>
+    </center>
+<script>
+$(document).ready(function(){
+    $("#openBtn").click(function(){
+        $("#dialog").fadeIn();
+    });
+    
+    $("#closeBtn").click(function(){
+        $("#dialog").fadeOut();
+    });
+});
+</script>
+
+</body>
+</html>
